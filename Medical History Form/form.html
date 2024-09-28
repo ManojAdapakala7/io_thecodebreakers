@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical History Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Medical History Form</h1>
+
+    <form action="/submit" method="POST">
+        <div class="form-group">
+            <div class="section-title"><span> Personal Information</span></div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter full name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter age" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="blood-group">Blood Group:</label>
+            <select id="blood-group" name="blood-group" required>
+                <option value="">Select Blood Group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+        </div>
+
+    <div class="form-group">
+        <div class="section-title">Medical Information</div>
+        <label for="height">Height (in cm):</label>
+        <input type="number" id="height" name="height" placeholder="Enter height" required>
+
+        <label for="weight">Weight (in kg):</label>
+        <input type="number" id="weight" name="weight" placeholder="Enter weight" required>
+
+        <button type="button" class="calculate-bmi-btn" onclick="calculateBMI()">Calculate BMI</button>
+        <div id="bmi-result" class="bmi-result"></div>
+
+        <label for="bp">Blood Pressure (in mmHg):</label>
+        <input type="text" id="bp" name="bp" placeholder="e.g. 120/80">
+
+        <label for="diabetes">Diabetes:</label>
+        <select id="diabetes" name="diabetes" required>
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+
+        <label for="cholesterol">Cholesterol Level:</label>
+        <input type="text" id="cholesterol" name="cholesterol" placeholder="Enter cholesterol level">
+
+        <label for="hereditary">Hereditary Diseases:</label>
+        <textarea id="hereditary" name="hereditary" placeholder="Any hereditary diseases?" rows="3"></textarea>
+
+        <label for="previous-accidents">Previous Accidents:</label>
+        <textarea id="previous-accidents" name="previous-accidents" placeholder="Mention any previous accidents" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <div class="section-title">Lifestyle Habits</div>
+
+        <label for="alcohol">Alcohol Consumption:</label>
+        <select id="alcohol" name="alcohol" required>
+            <option value="none">None</option>
+            <option value="occasional">Occasional</option>
+            <option value="regular">Regular</option>
+        </select>
+
+        <label for="cigarette">Cigarette Smoking:</label>
+        <select id="cigarette" name="cigarette" required>
+            <option value="none">None</option>
+            <option value="occasional">Occasional</option>
+            <option value="regular">Regular</option>
+        </select>
+
+        <label for="gutka">Tobacco Consumption:</label>
+        <select id="gutka" name="gutka" required>
+            <option value="none">None</option>
+            <option value="occasional">Occasional</option>
+            <option value="regular">Regular</option>
+        </select>
+
+        <label for="work-hours">Work Hours Per Day:</label>
+        <input type="number" id="work-hours" name="work-hours" placeholder="Enter no. of work hours" required>
+
+        <label for="stress-level">Stress Level (1 to 10):</label>
+        <input type="number" id="stress-level" name="stress-level" min="1" max="10" placeholder="Rate your stress level" required>
+
+        <label for="physical-activity">Physical Activity Participation (1 to 10):</label>
+        <input type="number" id="physical-activity" name="physical-activity" min="1" max="10" placeholder="Rate your physical activity" required>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Medical History</button>
+</div>
+
+<script>
+    function calculateBMI() {
+        var height = document.getElementById("height").value / 100; // Convert cm to meters
+        var weight = document.getElementById("weight").value;
+        var bmi = (weight / (height * height)).toFixed(2);
+
+        if (!isNaN(bmi) && bmi > 0) {
+            document.getElementById("bmi-result").textContent = "Your BMI is: " + bmi;
+            document.getElementById("bmi").value = bmi;
+        } else {
+            document.getElementById("bmi-result").textContent = "Please enter valid height and weight.";
+        }
+    }
+</script>
+
+</body>
+</html>

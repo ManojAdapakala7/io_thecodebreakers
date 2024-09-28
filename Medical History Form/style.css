@@ -1,0 +1,91 @@
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+       
+            background-size: cover;
+            background-position: center;
+            background-image: url(medical\ background\ image.jpg);
+            margin: 0;
+            padding: 0;
+            color: #ded0d0;
+        }
+
+        /* Container Styling */
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: rgba(245, 245, 245, 0.151);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        /* Header Styling */
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Title Styling */
+        .section-title {
+            text-align: center;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: hsl(219, 76%, 45%);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Input and Textarea Styling */
+        input[type="text"], input[type="number"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 2px solid hsl(219, 76%, 45%);
+            border-radius: 5px;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus, textarea:focus, select:focus {
+            background-color: #e0f7fa;
+            border-color: #009688;
+            outline: none;
+        }
+
+        /* Button Styling */
+        .calculate-bmi-btn, .submit-btn {
+            width: 100%;
+            background-color: hsl(219, 76%, 45%);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            font-size: 16px;
+        }
+
+        .calculate-bmi-btn:hover, .submit-btn:hover {
+            background-color: #388E3C;
+        }
+
+        /* BMI Result Styling */
+        .bmi-result {
+            font-size: 1.2em;
+            color: #ff5722;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Form Group Spacing */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+       
